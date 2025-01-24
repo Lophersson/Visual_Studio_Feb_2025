@@ -23,3 +23,21 @@ int FuncionSumaRango(int inicio, int fin)
 
 Console.WriteLine(FuncionSumaRango(3, 16));
 ---
+int FuncionSumaRango(int inicio, int fin) {
+    int suma = 0;
+
+    if (inicio > fin) {
+        for (int i = fin; i <= inicio; i++) {
+            suma += i;
+        }
+    } else {
+        for (int i = inicio; i <= fin; i++) {
+            suma += i;
+        }
+    };
+
+    return suma;
+}
+Console.WriteLine(FuncionSumaRango(25, 3));
+Console.WriteLine(FuncionSumaRango(2, 25));
+---
