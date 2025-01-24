@@ -1,0 +1,37 @@
+string Saludo = "Hola clase";
+int Valor = 1;
+
+int Valor;
+Valor = 0;
+
+Console.WriteLine(Saludo);
+---
+  
+string Saludo = "Hola mamoncillos <img src=\"https://pic.sopili.net/pub/emoji/twitter/2/72x72/1f61b.png\" width=20 height=20>";
+
+Console.WriteLine(Saludo);
+---
+string Saludo = "Hola clase";
+Saludo = "PEPE";
+
+Console.WriteLine(Saludo);
+
+int Suma(int x, int y) {
+  return x + y;
+}
+console.WriteLine("Suma: "+ Suma(3, 4));
+---
+  
+string Saludo = "Hola clase";
+Saludo = "PEPE";
+
+Console.WriteLine(Saludo);
+
+int Suma(int x, int y) {
+    int Total = x + y;
+    return Total;
+}
+
+
+Console.WriteLine("Suma: " + Suma(3, 4));
+---
