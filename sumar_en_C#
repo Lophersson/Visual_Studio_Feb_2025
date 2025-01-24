@@ -1,0 +1,25 @@
+int FuncionSumaN(int NumeroLimite)
+{
+    int suma = 0;
+    for (int i = 1; i <= NumeroLimite; i++)
+    {
+        suma += i;
+    }
+    return suma;
+}
+
+Console.WriteLine(FuncionSumaN(20));
+Console.WriteLine(FuncionSumaN(120));
+
+int FuncionSumaRango(int inicio, int fin)
+{
+    int suma = 0;
+    for (int i = inicio; i <= fin; i++)
+    {
+        suma += i;
+    }
+    return suma;
+}
+
+Console.WriteLine(FuncionSumaRango(3, 16));
+---
