@@ -1,0 +1,65 @@
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int resultado = SumarPrimerosDiezNumeros();
+        Console.WriteLine("La suma de los primeros 10 números es: " + resultado);
+    }
+
+    static int SumarPrimerosDiezNumeros()
+    {
+        int suma = 0;
+        for (int i = 1; i <= 10; i++)
+        {
+            suma += i;
+        }
+        return suma;
+    }
+}
+---
+  suma 15 primeros numeros:
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int resultado = SumarPrimerosQuinceNumeros();
+        Console.WriteLine("La suma de los primeros 15 números es: " + resultado);
+    }
+
+    static int SumarPrimerosQuinceNumeros()
+    {
+        int suma = 0;
+        for (int i = 1; i <= 15; i++)
+        {
+            suma += i;
+        }
+        return suma;
+    }
+}
+---
+  using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int numeroLimite = 15;  // Puedes cambiar este valor a cualquier otro número
+        int resultado = FuncionSumaN(numeroLimite);
+        Console.WriteLine($"La suma de los primeros {numeroLimite} números es: " + resultado);
+    }
+
+    static int FuncionSumaN(int NumeroLimite)
+    {
+        int suma = 0;
+        for (int i = 1; i <= NumeroLimite; i++)
+        {
+            suma += i;
+        }
+        return suma;
+    }
+}
