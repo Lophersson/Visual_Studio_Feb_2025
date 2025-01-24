@@ -85,4 +85,48 @@ class ProgramaSumaRango
     }
 }
 ---
+using System;
 
+class ProgramaSumaRango
+{
+    static int FuncionSumaRango(int inicio, int fin)
+    {
+        int suma = 0;
+
+        if (inicio > fin)
+        {
+            for (int i = inicio; i >= fin; i--) // Bucle decreciente
+            {
+                suma += i;
+            }
+        }
+        else
+        {
+            for (int i = inicio; i <= fin; i++) // Bucle creciente
+            {
+                suma += i;
+            }
+        }
+
+        return suma;
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Aplicación para calcular la suma de un rango de números.");
+
+        Console.Write("Introduce el valor inicial: ");
+        int inicio = int.Parse(Console.ReadLine());
+
+        Console.Write("Introduce el valor final: ");
+        int fin = int.Parse(Console.ReadLine());
+
+        int resultado = FuncionSumaRango(inicio, fin);
+        Console.WriteLine($"La suma de los números entre {inicio} y {fin} es: {resultado}");
+
+        Console.WriteLine("\nPresiona cualquier tecla para salir...");
+        Console.ReadKey();
+    }
+}
+
+---
