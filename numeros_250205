@@ -1,7 +1,9 @@
 using System;
 
-class Program {
-    static void Main() {
+class Program
+{
+    static void Main()
+    {
         // Definir las variables
         int x = 3;
         int y = 4;
@@ -10,8 +12,16 @@ class Program {
         int suma = x + y;
 
         // Verificar si la suma es mayor o igual a 10 o menor o igual a 10
-        if (suma > 10) {
-            using System;
+        if (suma > 10)
+        {
+            Console.WriteLine("La suma es mayor que 10: " + suma);
+        }
+        else
+        {
+            Console.WriteLine("La suma es menor o igual a 10: " + suma);
+        }
+    }
+}
 ---
 class Program {
         static void Main() {
