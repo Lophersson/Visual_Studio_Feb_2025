@@ -48,11 +48,4 @@ class Program {
             }
         }
     }
-
-    Console.WriteLine("La suma es mayor que 10, la suma es: " + suma);
-        } else {
-            Console.WriteLine("La suma es menor o igual a 10, la suma es: " + suma);
-        }
-    }
-}
 ---
