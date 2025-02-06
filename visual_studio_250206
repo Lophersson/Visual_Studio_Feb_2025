@@ -1,26 +1,19 @@
-class Program {
-    static void Main() {
-        // Pedir al usuario que ingrese una nota
-        Console.Write("Introduce una nota (entre 0 y 10): ");
-        int nota = int.Parse(Console.ReadLine());
+int NumeroVocales = 0;
+string LetrasBuscar = "aáeéiíïoóuúü";
 
-        // Comprobar si la nota está en el rango válido
-        if (nota < 0 || nota > 10) {
-            Console.WriteLine("Error: La nota debe estar entre 0 y 10.");
-        } else {
-            // Evaluar la nota y dar el mensaje correspondiente
-            if (nota < 5) {
-                Console.WriteLine("Suspenso");
-            } else if (nota >= 5 && nota < 6) {
-                Console.WriteLine("Aprobado");
-            } else if (nota >= 6 && nota < 7) {
-                Console.WriteLine("Bien");
-            } else if (nota >= 7 && nota < 9) {
-                Console.WriteLine("Notable");
-            } else if (nota >= 9 && nota <= 10) {
-                Console.WriteLine("Sobresaliente");
-            }
-        }
+Console.Write("Introduce un texto: ");
+string Texto = Console.ReadLine().ToLower();
+
+for (int i = 0; i < Texto.Length; i++) {
+    // Comprobar si el carácter es una vocal
+    if (LetrasBuscar.Contains(Texto[i])) {
+        NumeroVocales++;
+    } else {
+        //Nada
     }
+}
+
+Console.WriteLine("Numero de vocales: " + NumeroVocales);
+---
 }
 ---
