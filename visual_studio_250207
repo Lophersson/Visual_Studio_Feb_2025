@@ -50,3 +50,103 @@ class Program {
     }
 }
 ---
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("-- Bienvenido a Mi Juego --\n");
+        Console.WriteLine("REGLAS -");
+        Console.WriteLine("#1) Debes adivinar un número entre 1 y 100.");
+        Console.WriteLine("#2) Tienes 7 intentos.");
+        Console.WriteLine("#3) Después de cada intento, recibirás una pista indicando si el número es demasiado alto o demasiado bajo.");
+        Console.WriteLine("#4) ¡Buena suerte! :D\n");
+
+        int secreto = 34;
+        int intento;
+        bool acertado = false;
+
+        for (int g = 1; g <= 7; g++) {
+            Console.WriteLine("------------------");
+            Console.WriteLine($"Intento #{g} -"); 
+            Console.Write("Ingresa tu número: ");
+
+            // Validar entrada del usuario
+            if (!int.TryParse(Console.ReadLine(), out intento)) {
+                Console.WriteLine("Entrada no válida, por favor ingresa un número.");
+                g--; // No contar intento inválido
+                continue;
+            }
+
+            Console.WriteLine();
+
+            if (intento == secreto) {
+                acertado = true;
+                break;
+            } else if (intento < secreto) {
+                Console.WriteLine("Demasiado bajo, intenta con un número mayor.\n");
+            } else {
+                Console.WriteLine("Demasiado alto, intenta con un número menor.\n");
+            }
+        }
+
+        if (acertado) {
+            Console.WriteLine($"¡Felicidades! ¡Has ganado!\nEl número secreto era {secreto}.");
+        } else {
+            Console.WriteLine("Se acabaron tus 7 intentos, ¡mejor suerte la próxima vez!");
+        }
+    }
+---
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("-- Bienvenido a Mi Juego --\n");
+        Console.Write("Ingresa tu nombre: ");
+        string nombre = Console.ReadLine();
+
+        int nombreValor = 0;
+        foreach (char c in nombre) {
+            nombreValor += c;
+        }
+        int secreto = nombreValor % 1001; // Número entre 0 y 1000
+
+        Console.WriteLine("\nREGLAS -");
+        Console.WriteLine("#1) Debes adivinar un número entre 0 y 1000.");
+        Console.WriteLine("#2) Tienes 7 intentos.");
+        Console.WriteLine("#3) Después de cada intento, recibirás una pista indicando si el número es demasiado alto o demasiado bajo.");
+        Console.WriteLine("#4) ¡Buena suerte! :D\n");
+
+        int intento;
+        bool acertado = false;
+
+        for (int g = 1; g <= 7; g++) {
+            Console.WriteLine("------------------");
+            Console.WriteLine($"Intento #{g} -");
+            Console.Write("Ingresa tu número: ");
+
+            if (!int.TryParse(Console.ReadLine(), out intento)) {
+                Console.WriteLine("Entrada no válida, por favor ingresa un número.");
+                g--; // No contar intento inválido
+                continue;
+            }
+
+            Console.WriteLine();
+
+            if (intento == secreto) {
+                acertado = true;
+                break;
+            } else if (intento < secreto) {
+                Console.WriteLine("Demasiado bajo, intenta con un número mayor.\n");
+            } else {
+                Console.WriteLine("Demasiado alto, intenta con un número menor.\n");
+            }
+        }
+
+        if (acertado) {
+            Console.WriteLine($"¡Felicidades, {nombre}! ¡Has ganado!\nEl número secreto era {secreto}.");
+        } else {
+            Console.WriteLine($"Se acabaron tus 7 intentos, {nombre}. ¡Mejor suerte la próxima vez!");
+        }
+    }
+}
+---
