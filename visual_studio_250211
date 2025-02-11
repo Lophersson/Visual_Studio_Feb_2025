@@ -1,0 +1,33 @@
+void Suma(int num1, int num2) {
+    int result = num1 + num2;
+    Console.WriteLine($"\nResultado de la suma: {num1} + {num2} = {result}");
+}
+
+void Resta(int num1, int num2) {
+    int result = num1 - num2;
+    Console.WriteLine($"\nResultado de la resta: {num1} - {num2} = {result}");
+}
+
+void Multiplicacion(int num1, int num2) {
+    int result = num1 * num2;
+    Console.WriteLine($"\nResultado de la multiplicación: {num1} * {num2} = {result}");
+}
+
+switch (option) {
+    case 1:
+        Suma(num1, num2);
+        break;
+
+    case 2:
+        Resta(num1, num2);
+        break;
+
+    case 3:
+        Multiplicacion(num1, num2);
+        break;
+
+    default:
+        Console.WriteLine("\nOpción no válida.");
+        break;
+}
+---
