@@ -31,3 +31,79 @@ switch (option) {
         break;
 }
 ---
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string usuarioCorrecto = "pepe";
+        string claveCorrecta = "kiko";
+        int NumeroIntentos = 0;
+        bool MostrarLogin = true;
+
+        while (MostrarLogin && NumeroIntentos <= 2)
+        {
+            Console.Write("Introduce el nombre de usuario: ");
+            string usuarioIngresado = Console.ReadLine();
+
+            Console.Write("Introduce la clave: ");
+            string claveIngresada = Console.ReadLine();
+
+            if (usuarioIngresado == usuarioCorrecto && claveIngresada == claveCorrecta)
+            {
+                Console.WriteLine("¡Enhorabuena! Acceso permitido.");
+                MostrarLogin = false; // Termina el bucle
+            }
+            else
+            {
+                NumeroIntentos++;
+                int intentosRestantes = 3 - NumeroIntentos;
+
+                if (NumeroIntentos <= 2)
+                {
+                    Console.WriteLine($"Datos incorrectos. Te quedan {intentosRestantes} intento(s).");
+                }
+            }
+        }
+
+        if (NumeroIntentos > 2)
+        {
+            Console.WriteLine("¡Denegado! Acceso no permitido.");
+        }
+    }
+}
+
+---
+using System;
+
+class Program {
+    static void Main() {
+        
+        
+        string usuarioCorrecto = "pepe";
+        string claveCorrecta = "kiko";
+        int intentos = 0;
+        const int maxIntentos = 3;
+
+        while (intentos < maxIntentos) {
+            Console.Write("Introduce el nombre de usuario: ");
+            string usuarioIngresado = Console.ReadLine();
+
+            Console.Write("Introduce la clave: ");
+            string claveIngresada = Console.ReadLine();
+
+            if (usuarioIngresado == usuarioCorrecto && claveIngresada == claveCorrecta) {
+                Console.WriteLine("¡Enhorabuena! Acceso permitido.");
+                return; // Salir del programa al conseguir el acceso
+            } else {
+                intentos++;
+                int intentosRestantes = maxIntentos - intentos;
+                Console.WriteLine($"Datos incorrectos. Te quedan {intentosRestantes} intento(s).");
+            }
+        }
+
+        Console.WriteLine("¡Denegado! Acceso no permitido.");
+    }
+}
+---
