@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static void Main() {
+        // Definir opciones de conversión
+        List<string> opciones = new List<string> { "Bytes", "KB", "MB", "GB" };
+
+        Console.Write("Ingrese la cantidad: ");
+        if (!double.TryParse(Console.ReadLine(), out double cantidad)) {
+            Console.WriteLine("Entrada no válida. Debe ser un número.");
+            return;
+        }
+
+        Console.WriteLine("Seleccione la unidad de entrada:");
+        for (int i = 0; i < opciones.Count; i++)
+            Console.WriteLine($"{i + 1}. {opciones[i]}");
+
+        if (!int.TryParse(Console.ReadLine(), out int opcionEntrada) || opcionEntrada < 1 || opcionEntrada > opciones.Count) {
+            Console.WriteLine("Selección inválida.");
+            return;
+        }
+
+        string unidadEntrada = opciones[opcionEntrada - 1];
+        opciones.RemoveAt(opcionEntrada - 1); // Eliminar la opción seleccionada
+
+        Console.WriteLine("Seleccione la unidad de salida:");
+        for (int i = 0; i < opciones.Count; i++)
+            Console.WriteLine($"{i + 1}. {opciones[i]}");
+
+        if (!int.TryParse(Console.ReadLine(), out int opcionSalida) || opcionSalida < 1 || opcionSalida > opciones.Count) {
+            Console.WriteLine("Selección inválida.");
+            return;
+        }
+
+        string unidadSalida = opciones[opcionSalida - 1];
+        double resultado = Convertir(cantidad, unidadEntrada, unidadSalida);
+
+        Console.WriteLine($"{cantidad} {unidadEntrada} equivale a {resultado} {unidadSalida}");
+    }
+
+    static double Convertir(double cantidad, string desde, string hacia) {
+        Dictionary<string, double> factores = new Dictionary<string, double>
+        {
+            { "Bytes", 1 },
+            { "KB", 1024 },
+            { "MB", 1024 * 1024 },
+            { "GB", 1024 * 1024 * 1024 }
+        };
+
+        double bytes = cantidad * factores[desde]; // Convertir a bytes
+        return bytes / factores[hacia]; // Convertir a la unidad deseada
+    }
+}
+---
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        var opciones = new List<string> { "Bytes", "KB", "MB", "GB" };
+        Console.Write("Ingrese la cantidad: ");
+        if (!double.TryParse(Console.ReadLine(), out double cantidad)) { Console.WriteLine("Entrada no válida."); return; }
+
+        string unidadEntrada = SeleccionarUnidad("entrada", opciones);
+        opciones.Remove(unidadEntrada);
+        string unidadSalida = SeleccionarUnidad("salida", opciones);
+
+        double resultado = Convertir(cantidad, unidadEntrada, unidadSalida);
+        Console.WriteLine($"{cantidad} {unidadEntrada} equivale a {resultado} {unidadSalida}");
+    }
+
+    static string SeleccionarUnidad(string tipo, List<string> opciones)
+    {
+        Console.WriteLine($"Seleccione la unidad de {tipo}:");
+        for (int i = 0; i < opciones.Count; i++) Console.WriteLine($"{i + 1}. {opciones[i]}");
+        return int.TryParse(Console.ReadLine(), out int opcion) && opcion >= 1 && opcion <= opciones.Count ? opciones[opcion - 1] : throw new Exception("Selección inválida.");
+    }
+
+    static double Convertir(double cantidad, string desde, string hacia)
+    {
+        var factores = new Dictionary<string, double> { { "Bytes", 1 }, { "KB", 1024 }, { "MB", 1048576 }, { "GB", 1073741824 } };
+        return cantidad * factores[desde] / factores[hacia];
+    }
+}
+---
