@@ -1,0 +1,27 @@
+string[] nombres = { "Luis", "Jose", "María", "Elena" };
+string nombre = "Lucía";
+
+Console.WriteLine(nombres[2]);  // Imprime "María"
+Console.WriteLine(nombres.Length); // Imprime la cantidad de nombres en el array
+
+int NumeroTotal = 0;
+
+// Primer bucle: Imprimir los caracteres de "nombre" y su longitud
+for (int i = 0; i < nombre.Length; i++) {
+    Console.WriteLine(nombre[i]);        // Imprime cada carácter de "Lucía"
+    Console.WriteLine(nombre[i].ToString().Length); // Imprime la longitud de cada carácter (siendo siempre 1)
+}
+
+// Segundo bucle: Imprimir la longitud de cada nombre
+for (int i = 0; i < nombres.Length; i++) {
+    Console.WriteLine(nombres[i].Length); // Imprime la longitud de cada nombre
+}
+
+// Tercer bucle: Sumar la longitud de todos los nombres
+for (int i = 0; i < nombres.Length; i++) {
+    NumeroTotal = NumeroTotal + nombres[i].Length; // Sumar la longitud de cada nombre
+}
+
+// Imprimir el total de caracteres
+Console.WriteLine("Total de caracteres en todos los nombres: " + NumeroTotal);
+---
