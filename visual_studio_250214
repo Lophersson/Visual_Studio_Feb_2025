@@ -79,3 +79,30 @@ for (int i = 0; i < nombres.Length; i++) {
 // Línea de separación
 Console.WriteLine("---------");
 ---
+string[] nombres = { "Luis", "Jose", "María", "Elena" };
+string nombre = "Lucía";
+
+int NumeroTotal = 0;
+
+Console.WriteLine(string.Join(", ", nombres)); // Imprime todos los nombres en una sola línea
+
+// Imprimir la longitud de cada nombre en la siguiente línea
+for (int i = 0; i < nombres.Length; i++) {
+    Console.Write(nombres[i].Length + ", "); // Imprime la longitud de cada nombre en la misma línea
+}
+
+// Línea de separación
+Console.WriteLine("---------");
+---
+string[] nombres = { "Luis", "Jose", "María", "Elena" };
+string nombre = "Lucía";
+
+List<string> MiLista = new List<string>();
+        MiLista.Add("OSCAR");
+        MiLista.Add("PEDRO");
+        MiLista.Add("MARIA");
+
+        foreach (string NombrePersona in MiLista) {
+            Console.WriteLine(NombrePersona); // Imprime cada nombre en la lista
+        }
+---
