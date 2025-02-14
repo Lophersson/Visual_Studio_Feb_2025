@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static void Main() {
+        List<string> tareas = new List<string> { "Tarea 1", "Tarea 2", "Tarea 3", "Tarea 4", "Tarea 5", "Tarea 6", "Tarea 7" };
+        bool salir = false;
+
+        while (!salir) {
+            // Mostrar la lista de tareas
+            Console.Clear();
+            Console.WriteLine("Lista de tareas:");
+            for (int i = 0; i < tareas.Count; i++) {
+                Console.WriteLine($"{i + 1}. {tareas[i]}");
+            }
+
+            // Preguntar si desea eliminar o agregar tarea
+            Console.WriteLine("\n¿Qué deseas hacer?");
+            Console.WriteLine("1. Eliminar tarea");
+            Console.WriteLine("2. Alta nueva tarea");
+            Console.WriteLine("S. Salir");
+
+            string opcionAccion = Console.ReadLine();
+
+            switch (opcionAccion.ToLower()) {
+                case "1":
+                    // Eliminar tarea
+                    Console.Clear();
+                    Console.WriteLine("Seleccione la tarea que deseas eliminar:");
+                    for (int i = 0; i < tareas.Count; i++) {
+                        Console.WriteLine($"{i + 1}. {tareas[i]}");
+                    }
+                    Console.WriteLine("Opción: ");
+                    string opcionEliminar = Console.ReadLine();
+
+                    int tareaEliminar;
+                    if (int.TryParse(opcionEliminar, out tareaEliminar) && tareaEliminar >= 1 && tareaEliminar <= tareas.Count) {
+                        Console.WriteLine($"¿Seguro que desea eliminar la tarea '{tareas[tareaEliminar - 1]}'? (S/N)");
+                        string confirmarEliminar = Console.ReadLine();
+                        if (confirmarEliminar.ToLower() == "s") {
+                            tareas.RemoveAt(tareaEliminar - 1);
+                            Console.WriteLine("Tarea eliminada con éxito.");
+                        }
+                    } else {
+                        Console.WriteLine("Opción no válida.");
+                    }
+                    break;
+
+                case "2":
+                    // Alta nueva tarea
+                    Console.Clear();
+                    Console.WriteLine("Ingrese el nombre de la nueva tarea:");
+                    string nuevaTarea = Console.ReadLine();
+                    tareas.Add(nuevaTarea);
+                    Console.WriteLine("Tarea añadida con éxito.");
+                    break;
+
+                case "s":
+                    salir = true;
+                    break;
+
+                default:
+                    Console.WriteLine("Opción no válida.");
+                    break;
+            }
+        }
+
+        Console.WriteLine("Programa finalizado.");
+    }
+}
