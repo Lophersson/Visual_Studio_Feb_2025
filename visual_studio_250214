@@ -106,3 +106,16 @@ List<string> MiLista = new List<string>();
             Console.WriteLine(NombrePersona); // Imprime cada nombre en la lista
         }
 ---
+
+string[] nombres = { "Luis", "Jose", "María", "Elena" };
+string nombre = "Lucía";
+
+List<string> MiLista = new List<string>();
+        MiLista.Add("OSCAR");
+        MiLista.Add("PEDRO");
+        MiLista.Add("MARIA");
+
+        foreach (string NombrePersona in MiLista) {
+            Console.WriteLine(NombrePersona); // Imprime cada nombre en la lista
+        }
+---
