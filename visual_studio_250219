@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static void Main() {
+        PantallaInicial();
+    }
+
+    static void PantallaInicial() {
+        List<string> tareas = new List<string>();
+        bool salir = false;
+
+        while (!salir) {
+            PantallaInicialMostrar(tareas);
+            PantallaInicialTratarOpcion(tareas, ref salir);
+        }
+
+        Console.WriteLine("Programa finalizado.");
+    }
+
+    static void PantallaInicialMostrar(List<string> tareas) {
+        Console.Clear();
+        Console.WriteLine("=== Gestor de Tareas ===");
+        Console.WriteLine("0. Mostrar tareas");
+        Console.WriteLine("1. Agregar nueva tarea");
+        Console.WriteLine("2. Eliminar tarea");
+        Console.WriteLine("3. Salir");
+        Console.Write("Opción: ");
+    }
+
+    static void PantallaInicialTratarOpcion(List<string> tareas, ref bool salir) {
+        string opcion = Console.ReadLine()?.Trim();
+
+        switch (opcion) {
+            case "0":
+                MostrarTareas(tareas);
+                break;
+            case "1":
+                AgregarTarea(tareas);
+                break;
+            case "2":
+                EliminarTarea(tareas);
+                break;
+            case "3":
+                salir = true;
+                break;
+            default:
+                Console.WriteLine("Opción no válida. Inténtelo de nuevo.");
+                break;
+        }
+
+        if (!salir) {
+            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.ReadKey();
+        }
+    }
+
+    static void MostrarTareas(List<string> tareas) {
+        Console.Clear();
+        Console.WriteLine("=== Lista de Tareas ===");
+        if (tareas.Count == 0) {
+            Console.WriteLine("(No hay tareas en la lista)");
+        } else {
+            for (int i = 0; i < tareas.Count; i++) {
+                Console.WriteLine($"{i + 1}. {tareas[i]}");
+            }
+        }
+    }
+
+    static void AgregarTarea(List<string> tareas) {
+        Console.Clear();
+        Console.Write("Ingrese la nueva tarea: ");
+        string nuevaTarea = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(nuevaTarea)) {
+            tareas.Add(nuevaTarea);
+            Console.WriteLine("Tarea añadida con éxito.");
+        } else {
+            Console.WriteLine("No se puede añadir una tarea vacía.");
+        }
+    }
+
+    static void EliminarTarea(List<string> tareas) {
+        if (tareas.Count > 0) {
+            Console.Clear();
+            Console.WriteLine("Seleccione el número de la tarea a eliminar:");
+            for (int i = 0; i < tareas.Count; i++) {
+                Console.WriteLine($"{i + 1}. {tareas[i]}");
+            }
+            Console.Write("Número: ");
+
+            if (int.TryParse(Console.ReadLine(), out int indice) && indice >= 1 && indice <= tareas.Count) {
+                Console.WriteLine($"¿Seguro que deseas eliminar la tarea '{tareas[indice - 1]}'? (S/N)");
+                if (Console.ReadLine()?.Trim().ToLower() == "s") {
+                    tareas.RemoveAt(indice - 1);
+                    Console.WriteLine("Tarea eliminada con éxito.");
+                }
+            } else {
+                Console.WriteLine("Opción no válida.");
+            }
+        } else {
+            Console.WriteLine("No hay tareas para eliminar.");
+        }
+    }
+}
