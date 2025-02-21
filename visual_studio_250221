@@ -135,3 +135,52 @@ class Program {
     }
 }
 ---
+using System;
+using System.Collections.Generic;
+
+public class PersonaClase {
+    private int Edad;
+    public int AnoNacimiento;
+    public string Nombre;
+
+    public PersonaClase(int Ano, string nombre) {
+        this.AnoNacimiento = Ano;
+        this.Nombre = nombre;
+    }
+
+    private void CalcularEdad() {
+        this.Edad = DateTime.Now.Year - this.AnoNacimiento;
+    }
+
+    public int GetEdad() {
+        this.CalcularEdad();
+        return this.Edad;
+    }
+
+    public string Saludo() {
+        return $"Hola, soy {this.Nombre} y tengo ({this.GetEdad()} años).";
+    }
+}
+
+class Program {
+    static void Main() {
+        List<PersonaClase> PersonasLista = new List<PersonaClase>();
+        
+        PersonasLista.Add(new PersonaClase(1988, "Jenny"));
+        PersonasLista.Add(new PersonaClase(1981, "Humberto"));
+        PersonasLista.Add(new PersonaClase(1995, "Pelayo"));
+        PersonasLista.Add(new PersonaClase(1970, "Luci"));
+        PersonasLista.Add(new PersonaClase(1977, "Gabriel"));
+        PersonasLista.Add(new PersonaClase(1982, "Fran"));
+        PersonasLista.Add(new PersonaClase(1974, "María"));
+        PersonasLista.Add(new PersonaClase(1993, "Lorena"));
+        PersonasLista.Add(new PersonaClase(1979, "Marta"));
+        PersonasLista.Add(new PersonaClase(1994, "Sandra"));
+        PersonasLista.Add(new PersonaClase(2002, "Laura"));
+
+        foreach (var persona in PersonasLista) {
+            Console.WriteLine(persona.Saludo());
+        }
+    }
+}
+---
