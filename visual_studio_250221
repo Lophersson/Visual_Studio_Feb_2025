@@ -37,3 +37,101 @@ public class PersonaClase {
     }
 }
 ---
+using System;
+using System.Collections.Generic;
+
+public class PersonaClase {
+    private int Edad;
+    public int AnoNacimiento;
+    public string Nombre;
+
+    public PersonaClase(int Ano, string nombre) {
+        this.AnoNacimiento = Ano;
+        this.Nombre = nombre;
+    }
+
+    private void CalcularEdad() {
+        this.Edad = DateTime.Now.Year - this.AnoNacimiento;
+    }
+
+    public int GetEdad() {
+        this.CalcularEdad();
+        return this.Edad;
+    }
+
+    public string Saludo() {
+        return $"Hola, soy {this.Nombre} y nací en {this.AnoNacimiento}";
+    }
+}
+
+class Program {
+    static void Main() {
+        List<PersonaClase> personas = new List<PersonaClase>() {
+            new PersonaClase(1988, "Jenny"),
+            new PersonaClase(1981, "Humberto"),
+            new PersonaClase(1995, "Pelayo"),
+            new PersonaClase(1970, "Luci"),
+            new PersonaClase(1977, "Gabriel"),
+            new PersonaClase(1982, "Fran"),
+            new PersonaClase(1974, "María"),
+            new PersonaClase(1993, "Lorena"),
+            new PersonaClase(1979, "Marta"),
+            new PersonaClase(1994, "Sandra"),
+            new PersonaClase(2002, "Laura")
+        };
+
+        foreach (var persona in personas) {
+            Console.WriteLine($"{persona.Saludo()} y tengo ({persona.GetEdad()} años).");
+        }
+    }
+}
+---
+using System;
+using System.Collections.Generic;
+
+public class PersonaClase {
+    private int Edad;
+    public int AnoNacimiento;
+    public string Nombre;
+
+    public PersonaClase(int Ano, string nombre) {
+        this.AnoNacimiento = Ano;
+        this.Nombre = nombre;
+    }
+
+    private void CalcularEdad() {
+        this.Edad = DateTime.Now.Year - this.AnoNacimiento;
+    }
+
+    public int GetEdad() {
+        this.CalcularEdad();
+        return this.Edad;
+    }
+
+    public string Saludo() {
+        return $"Hola, soy {this.Nombre} y nací en {this.AnoNacimiento}";
+    }
+}
+
+class Program {
+    static void Main() {
+        List<PersonaClase> PersonasLista = new List<PersonaClase>();
+        
+        PersonasLista.Add(new PersonaClase(1988, "Jenny"));
+        PersonasLista.Add(new PersonaClase(1981, "Humberto"));
+        PersonasLista.Add(new PersonaClase(1995, "Pelayo"));
+        PersonasLista.Add(new PersonaClase(1970, "Luci"));
+        PersonasLista.Add(new PersonaClase(1977, "Gabriel"));
+        PersonasLista.Add(new PersonaClase(1982, "Fran"));
+        PersonasLista.Add(new PersonaClase(1974, "María"));
+        PersonasLista.Add(new PersonaClase(1993, "Lorena"));
+        PersonasLista.Add(new PersonaClase(1979, "Marta"));
+        PersonasLista.Add(new PersonaClase(1994, "Sandra"));
+        PersonasLista.Add(new PersonaClase(2002, "Laura"));
+
+        foreach (var persona in PersonasLista) {
+            Console.WriteLine($"{persona.Saludo()} y tengo ({persona.GetEdad()} años).");
+        }
+    }
+}
+---
