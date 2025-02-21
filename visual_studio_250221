@@ -12,3 +12,28 @@ public class CalculadoraClase {
     }
 }
 ---
+using System.Runtime.CompilerServices;
+
+public class PersonaClase {
+    private int Edad;
+    public int AnoNacimiento;
+    public string Nombre;
+
+    public PersonaClase(int Ano, string nombre) {
+        this.AnoNacimiento = Ano;
+        this.Nombre = nombre;
+    }
+    private void CalcularEdad() {
+        this.Edad = DateTime.Now.Year - this.AnoNacimiento;
+    }
+
+    public int GetEdad() {
+        this.CalcularEdad();
+        return this.Edad;
+    }
+
+    public string Saludo() {
+        return "Hola, soy " + this.Nombre + " y nací en " + this.AnoNacimiento;
+    }
+}
+---
