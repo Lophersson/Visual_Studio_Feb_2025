@@ -1,0 +1,14 @@
+public class CalculadoraClase {
+    int Numero1;
+    int Numero2;
+
+    CalculadoraClase(int x, int y) {
+        this.Numero1 = x;
+        this.Numero2 = y;
+    }
+
+    int Suma() {
+        return this.Numero1 + this.Numero2;
+    }
+}
+---
