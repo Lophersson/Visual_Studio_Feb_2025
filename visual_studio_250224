@@ -1,0 +1,22 @@
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Objetos {
+
+    public class CalculadoraClase {
+
+        private string _Nombre;
+
+        public string Nombre {
+            get {
+                return _Nombre.ToUpper();
+            }
+            set {
+                _Nombre = value;
+            }
+        }
+
+        public string Apellidos { get; set; }
+    }
+}
+---
