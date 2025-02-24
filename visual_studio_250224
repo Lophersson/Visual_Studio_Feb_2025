@@ -98,3 +98,41 @@ namespace Objetos2 {
     }
 }
 ---
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NS_Tareas {
+
+    public static class Constantes {
+
+        public static int TareaEstadoPendiente = 0;
+        public static int TareaEstadoEnProceso = 1;
+        public static int TareaEstadoFinalizada = 2;
+        public static int TareaEstadoCancelada = 3;
+
+        public static string[] Nombres = { "PENDIENTE", "EN PROCESO", "FINALIZADA", "CANCELADA" };
+    }
+
+    public class TareaClase {
+
+        public string Codigo { get; set; }
+        public string Nombre { get; set; }
+        public int Estado { get; set; }
+
+        public TareaClase() {
+            this.Codigo = "";
+            this.Nombre = "";
+            this.Estado = Constantes.TareaEstadoPendiente;
+        }
+
+        public TareaClase(string CodigoValor, string NombreValor, int EstadoValor) {
+            this.Codigo = CodigoValor;
+            this.Nombre = NombreValor;
+            this.Estado = EstadoValor;
+        }
+    }
+}
+---
