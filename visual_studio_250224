@@ -42,3 +42,59 @@ namespace Objetos {
     }
 }
 ---
+PROYECTO_OBJETOS2:
+using Objetos;
+
+PersonaClase persona = new PersonaClase();
+persona.Nombre = "Luis";
+Console.WriteLine(persona.Nombre);
+persona.Apellidos = "Lopez";
+Console.WriteLine(persona.Apellidos);
+
+UsuarioClase usuario = new UsuarioClase();
+usuario.Nombre = "Luis";
+usuario.Apellidos = "Lopez";
+usuario.Codigo = "C1";
+usuario.Clave = "jiksi";
+---
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Objetos2 {
+    internal class PersonaClase {
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+    }
+
+    internal class UsuarioClase : PersonaClase {
+        public string Codigo { get; set; }
+        public string Clave { get; set; }
+    }
+
+    class Program {
+        static void Main(string[] args) {
+            // Crear una instancia de PersonaClase
+            PersonaClase persona = new PersonaClase();
+            persona.Nombre = "Luis";
+            Console.WriteLine(persona.Nombre);
+            persona.Apellidos = "Lopez";
+            Console.WriteLine(persona.Apellidos);
+
+            // Crear una instancia de UsuarioClase
+            UsuarioClase usuario = new UsuarioClase();
+            usuario.Nombre = "Luis";
+            usuario.Apellidos = "Lopez";
+            usuario.Codigo = "C1";
+            usuario.Clave = "jiksi";
+
+            Console.WriteLine(usuario.Nombre);
+            Console.WriteLine(usuario.Apellidos);
+            Console.WriteLine(usuario.Codigo);
+            Console.WriteLine(usuario.Clave);
+        }
+    }
+}
+---
