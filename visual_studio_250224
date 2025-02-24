@@ -20,3 +20,25 @@ namespace Objetos {
     }
 }
 ---
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Objetos {
+
+    public class PersonaClase {
+
+        private string _Nombre;
+
+        public string Nombre {
+            get {
+                return this._Nombre.ToUpper();
+            }
+            set {
+                this._Nombre = value;
+            }
+        }
+
+        public string Apellidos { get; set; }
+    }
+}
+---
