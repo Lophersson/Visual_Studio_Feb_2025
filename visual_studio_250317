@@ -1,0 +1,25 @@
+namespace Ejemplo250317 {
+internal class Program {
+static string[] dias = { "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO" };
+
+static int[] dnis = { 32, 45, 33, 46, 34, 35, 36 };
+static string[] nombres = { "LUIS", "MARÍA", "JUAN", "MARÍA", "PEDRO", "LORENA", "JUAN" };
+
+static void Suma(int x, int y, ref int total)
+static int GetDniPorLetra(string Letra) {
+int Dni = 0;
+bool Encontrado = false;
+int Contador = 0;
+while (Encontrado == false && Contador < nombres.Length) {
+
+if (Letra == nombres[Contador].Substring(0, 1)) {
+Dni = dnis[Contador];
+Encontrado = true;
+} else {
+//Nada
+};
+Contador = Contador + 1;
+}
+return Dni;
+}
+}
