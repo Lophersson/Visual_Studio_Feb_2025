@@ -1,0 +1,193 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+
+namespace Personas {
+
+    public class PersonaClase {
+
+        public string Dni { get; set; }
+        public string Nombre { get; set; }
+        public string Correo { get; set; }
+
+       public PersonaClase() {
+            Dni = "";
+            Nombre = "";
+            Correo = "";
+        }
+        public PersonaClase(string DniValor, string NombreValor, string CorreoValor) {
+            Dni = DniValor;
+            Nombre = NombreValor;
+            Correo = CorreoValor;
+        }
+
+        public void IdentificarListado() {
+
+            Console.WriteLine("");
+            Console.WriteLine(Dni + " | " + Nombre + " | " + Correo);
+            Console.WriteLine("");
+
+        }
+        public void IdentificarListadoConContador(int Contador) {
+
+            Console.WriteLine("");
+            Console.WriteLine(Contador + ". " + Dni + " | " + Nombre + " | " + Correo);
+            Console.WriteLine("");
+
+        }
+        public void IdentificarFicha() {
+
+            Console.WriteLine("");
+            Console.WriteLine("Dni: " + Dni);
+            Console.WriteLine("Nombre: " + Nombre);
+            Console.WriteLine("Correo: " + Correo);
+            Console.WriteLine("");
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine("");
+        }
+
+    }  
+    
+    internal class Program {
+
+        static List<PersonaClase> ListadoPersonas = new List<PersonaClase>();
+
+
+
+
+
+        static void MostrarPantalla_Personas() {
+
+            string[] Opciones = { "1. Insertar persona", "2. Mostrar listado de personas", "3. Salir" };
+            string Opcion = "";
+            Opcion = CrearMenu("PERSONAS", Opciones);
+
+            if (Opcion == "1") {
+                MostrarPantalla_Insertar();
+            } else {
+                if (Opcion == "2") {
+                    MostrarPantalla_Listado();
+                } else {
+                    if (Opcion == "3") {
+                        MostrarPantalla_Salir();
+                    } else {
+                        MostrarPantalla_Personas();
+                    };
+                };
+            };
+        }
+
+        static void MostrarPantalla_Insertar() {
+
+            Console.Clear();
+
+            CrearTitulo("INSERTAR PERSONA");
+
+            PersonaClase Persona = new PersonaClase();
+
+            Console.Write("DNI: ");
+            Persona.Dni = Console.ReadLine();
+
+            Console.Write("NOMBRE: ");
+            Persona.Nombre = Console.ReadLine();
+
+            Console.Write("CORREO: ");
+            Persona.Correo = Console.ReadLine();
+
+            ListadoPersonas.Add(Persona);
+
+            CrearMensaje("Persona insertada correctamente...");
+            Thread.Sleep(1500);
+
+            MostrarPantalla_Personas();
+
+        }
+        static void MostrarPantalla_Listado() {
+
+            Console.Clear();
+
+            CrearTitulo("LISTADO PERSONAS");
+
+            if (ListadoPersonas.Count > 0) {
+
+                //for (int i = 0; i < ListadoPersonas.Count; i++) {
+                // ListadoPersonas[i].IdentificarListadoConContador(i);
+                //}
+                foreach (PersonaClase Persona in ListadoPersonas) { 
+                    Persona.IdentificarListado();
+                };
+            } else {
+                CrearMensaje("No hay personas registradas.");
+            };
+
+            CrearMensaje("Pulsa una tecla para continuar...");
+            Console.ReadKey();
+
+            MostrarPantalla_Personas();
+
+
+        }
+        static void MostrarPantalla_Salir() {
+
+            //NAda
+
+        }
+
+
+
+        static string LeerOpcionUsuario() {
+            string Respuesta = "";
+
+            Respuesta = Console.ReadLine();
+
+            return Respuesta;
+        }
+
+        static string CrearMenu(string Titulo, string[] ListaOpciones) {
+            Console.Clear();
+
+            //Pintar el titulo
+            CrearTitulo(Titulo);
+
+
+            //Pintar Opciones
+            foreach (string Opcion in ListaOpciones) {
+
+                Console.WriteLine(Opcion);
+                Console.WriteLine("");
+
+            };
+            //Obtener opcion seleccionada
+            Console.Write("Seleccione una opción ");
+            string SeleccionUsuario = "";
+            SeleccionUsuario = LeerOpcionUsuario();
+
+
+            return SeleccionUsuario;
+        }
+
+        static void CrearTitulo(string Titulo) {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine(Titulo);
+            Console.WriteLine("");
+        }
+        static void CrearMensaje(string Texto) {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine(Texto);
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+
+
+        static void Main(string[] args) {
+
+            MostrarPantalla_Personas();
+
+        }
+
+
+    }
+}
