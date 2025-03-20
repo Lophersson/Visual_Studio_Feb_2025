@@ -1,0 +1,94 @@
+namespace Personas {
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+
+public class PersonaClase     {
+public string Dni { get; set; }
+
+public string Nombre { get; set; }
+
+public string Correo { get; set; }
+
+public PersonaClase()         {
+Dni = "";
+Nombre = "";
+Correo = "";
+}
+
+public PersonaClase(string DniValor, string NombreValor, string CorreoValor)         {
+Dni = DniValor;
+Nombre = NombreValor;
+Correo = CorreoValor;
+}
+
+public void Identificar()         {
+Console.WriteLine("Dni: " + Dni);
+Console.WriteLine("Nombre: " + Nombre);
+Console.WriteLine("Correo: " + Correo);
+}
+}
+
+internal class Program     {
+internal static void Main(string[] args)         {
+List<PersonaClase> personas = new List<PersonaClase>();
+
+while (true) {
+Console.Clear();
+Console.WriteLine("---- MENÚ PRINCIPAL ----");
+Console.WriteLine("1. Insertar persona");
+Console.WriteLine("2. Ver listado de personas");
+Console.WriteLine("3. Salir");
+Console.Write("Selecciona una opción: ");
+string opcion = Console.ReadLine();
+
+if (opcion == "1") {
+Console.Clear();
+Console.WriteLine("---- Insertar Persona ----");
+
+Console.Write("Introduce el Dni: ");
+string dni = Console.ReadLine();
+
+Console.Write("Introduce el Nombre: ");
+string nombre = Console.ReadLine();
+
+Console.Write("Introduce el Correo: ");
+string correo = Console.ReadLine();
+
+personas.Add(new PersonaClase(dni, nombre, correo));
+
+Console.WriteLine("\nPersona añadida correctamente.");
+Console.WriteLine("Presiona cualquier tecla para continuar...");
+Console.ReadKey();
+} else if (opcion == "2") {
+
+Console.Clear();
+Console.WriteLine("---- Listado de Personas ----");
+
+if (personas.Count == 0) {
+Console.WriteLine("No hay personas registradas.");
+} else {
+foreach (var persona in personas) {
+persona.Identificar();
+Console.WriteLine("----------------------------");
+}
+}
+
+Console.WriteLine("Presiona cualquier tecla para continuar...");
+Console.ReadKey();
+} else if (opcion == "3") {
+
+Console.WriteLine("Saliendo del programa...");
+break;
+} else {
+
+Console.WriteLine("Opción no válida. Por favor, selecciona una opción válida.");
+Console.WriteLine("Presiona cualquier tecla para continuar...");
+Console.ReadKey();
+}
+}
+}
+}
+}
