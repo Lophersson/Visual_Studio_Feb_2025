@@ -1,0 +1,34 @@
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fichero {
+
+    internal class Program {
+        static void Main(string[] args) {
+
+            //Obtener nombre del fichero
+            DateTime FechaActual = DateTime.Now;
+           
+            string NombreFichero = FechaActual.ToString("yyyyMMddHHmmss") + ".txt";
+            //Obtner ruta del fichero
+            string Ruta = "C:\\Users\\usuario.DESKTOP-FMJNL8A\\Desktop\\destino\\";
+
+        
+        NombreFichero = Ruta + NombreFichero;
+
+            StreamWriter sw = new StreamWriter(NombreFichero);
+            for (int i = 0; i < 100; i++) {
+                sw.WriteLine(i + 1);
+            };
+
+            sw.Close();
+    }
+
+    }
+}
