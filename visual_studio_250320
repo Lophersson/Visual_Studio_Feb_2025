@@ -191,3 +191,44 @@ namespace Personas {
 
     }
 }
+---
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fichero {
+
+    internal class Program {
+        static void Main(string[] args) {
+
+            //Obtener nombre del fichero
+            DateTime FechaActual = DateTime.Now;
+            /*string NombreFicheroA = FechaActual.YearToString() +
+                                 FechaActual.MonthToString() +
+                                 FechaActual.DayToString() +
+                                 FechaActual.HourToString() +
+                                 FechaActual.MinuteToString() +
+                                 FechaActual.SecondToString() +
+                                 ".txt";*/
+            string NombreFichero = FechaActual.ToString("yyyyMMddHHmmss") + ".txt";
+            //Obtner ruta del fichero
+            string Ruta = "C:\\Users\\usuario.DESKTOP-FMJNL8A\\Desktop";
+
+            NombreFichero = Ruta + NombreFichero;
+
+            StreamWriter sw = new StreamWriter(NombreFichero2);
+            for (int i = 0; i < 100; i++) {
+                sw.WriteLine(i + 1);
+            };
+
+            sw.Close();
+    }
+
+    }
+}
+---
