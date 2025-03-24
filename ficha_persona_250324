@@ -1,0 +1,80 @@
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace Escritorio1 {
+    public partial class Pantalla1 : Form {
+        public Pantalla1() {
+            InitializeComponent();
+            InicializarFormulario();
+        }
+
+        private void InicializarFormulario() {
+            this.Text = "Formulario con Labels";
+            this.Size = new Size(400, 300);
+
+            // Label principal
+            Label lblTitulo = new Label();
+            lblTitulo.Text = "Formulario de Entrada";
+            lblTitulo.Font = new Font("Arial", 14, FontStyle.Bold);
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitulo.Dock = DockStyle.Top;
+            lblTitulo.Height = 40;
+            this.Controls.Add(lblTitulo);
+
+            // Panel para organizar los labels e inputs
+            Panel panel = new Panel();
+            panel.Dock = DockStyle.Fill;
+            panel.Padding = new Padding(10);
+            this.Controls.Add(panel);
+
+            // Nombres de los campos
+            string[] labels = { "DNI", "NOMBRE", "CORREO" };
+
+            // Crear tres labels con sus respectivos TextBox
+            foreach (string labelText in labels) {
+                Label label = new Label();
+                label.Text = labelText + ":";
+                label.AutoSize = true;
+                panel.Controls.Add(label);
+
+                TextBox textBox = new TextBox();
+                textBox.Width = 200;
+                panel.Controls.Add(textBox);
+            }
+
+            // FlowLayoutPanel para los inputs
+            FlowLayoutPanel flowPanel = new FlowLayoutPanel();
+            flowPanel.FlowDirection = FlowDirection.TopDown;
+            flowPanel.Dock = DockStyle.Fill;
+            flowPanel.Controls.AddRange(panel.Controls.OfType<Control>().ToArray());
+            this.Controls.Add(flowPanel);
+
+            // Panel para los botones
+            Panel panelBotones = new Panel();
+            panelBotones.Dock = DockStyle.Bottom;
+            panelBotones.Height = 50;
+            panelBotones.Padding = new Padding(10);
+            this.Controls.Add(panelBotones);
+
+            // Botón Aceptar
+            Button btnAceptar = new Button();
+            btnAceptar.Text = "✔ Aceptar";
+            btnAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAceptar.Size = new Size(100, 30);
+            btnAceptar.Location = new Point(this.ClientSize.Width - 220, 10);
+            btnAceptar.Click += (s, e) => MessageBox.Show("Datos aceptados");
+            panelBotones.Controls.Add(btnAceptar);
+
+            // Botón Cancelar
+            Button btnCancelar = new Button();
+            btnCancelar.Text = "✘ Cancelar";
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.Size = new Size(100, 30);
+            btnCancelar.Location = new Point(this.ClientSize.Width - 110, 10);
+            btnCancelar.Click += (s, e) => this.Close();
+            panelBotones.Controls.Add(btnCancelar);
+        }
+    }
+}
