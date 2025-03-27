@@ -1,0 +1,130 @@
+namespace PruebaCarrera {
+    partial class Form1 {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnShutdown;
+        private System.Windows.Forms.Label lblHorse;
+        private System.Windows.Forms.Label lblTitle;
+
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent() {
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnShutdown = new System.Windows.Forms.Button();
+            this.lblHorse = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Location = new System.Drawing.Point(520, 20);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(212, 32);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "Carrera de Caballos";
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Location = new System.Drawing.Point(582, 377);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(75, 75);
+            this.btnUp.TabIndex = 0;
+            this.btnUp.Text = "↑";
+            this.btnUp.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold);
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Location = new System.Drawing.Point(582, 477);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(75, 75);
+            this.btnDown.TabIndex = 1;
+            this.btnDown.Text = "↓";
+            this.btnDown.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold);
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLeft.Location = new System.Drawing.Point(532, 427);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(75, 75);
+            this.btnLeft.TabIndex = 2;
+            this.btnLeft.Text = "←";
+            this.btnLeft.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold);
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            // 
+            // btnRight
+            // 
+            this.btnRight.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRight.Location = new System.Drawing.Point(632, 427);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(75, 75);
+            this.btnRight.TabIndex = 3;
+            this.btnRight.Text = "→";
+            this.btnRight.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold);
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnShutdown
+            // 
+            this.btnShutdown.BackColor = System.Drawing.Color.Red;
+            this.btnShutdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShutdown.Location = new System.Drawing.Point(971, 477);
+            this.btnShutdown.Name = "btnShutdown";
+            this.btnShutdown.Size = new System.Drawing.Size(75, 75);
+            this.btnShutdown.TabIndex = 4;
+            this.btnShutdown.Text = "✖";
+            this.btnShutdown.ForeColor = System.Drawing.Color.White;
+            this.btnShutdown.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold);
+            this.btnShutdown.Click += new System.EventHandler(this.btnShutdown_Click);
+            // 
+            // lblHorse
+            // 
+            this.lblHorse.AutoSize = true;
+            this.lblHorse.Font = new System.Drawing.Font("Arial", 60F);
+            this.lblHorse.Location = new System.Drawing.Point(590, 204);
+            this.lblHorse.Name = "lblHorse";
+            this.lblHorse.Size = new System.Drawing.Size(120, 89);
+            this.lblHorse.TabIndex = 5;
+            this.lblHorse.Text = "🐎";
+            // 
+            // Form1
+            // 
+            this.BackgroundImage = System.Drawing.Image.FromFile("C:\\Users\\usuario.DESKTOP-FMJNL8A\\Desktop\\INICIO_CS\\PruebaCarrera\\PruebaCarrera/caballo-h3azzzaaorg8c9ay.jpg");  // Ruta de la imagen de fondo
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1238, 608);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnLeft);
+            this.Controls.Add(this.btnRight);
+            this.Controls.Add(this.btnShutdown);
+            this.Controls.Add(this.lblHorse);
+            this.Name = "Form1";
+            this.Text = "Carrera de Caballos";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}
