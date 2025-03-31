@@ -1,0 +1,161 @@
+using System.Windows.Forms;
+
+namespace Textos {
+    partial class Form1 {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.TextBox txtTexto;
+        private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button btnPasarDerecha;
+        private System.Windows.Forms.Button btnPasarIzquierda;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel panelListas;
+        private System.Windows.Forms.Panel panelBotones; // Panel para los botones
+
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent() {
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.txtTexto = new System.Windows.Forms.TextBox();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.panelListas = new System.Windows.Forms.FlowLayoutPanel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnPasarIzquierda = new System.Windows.Forms.Button();
+            this.btnPasarDerecha = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanel.SuspendLayout();
+            this.panelListas.SuspendLayout();
+            this.panelBotones.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // tableLayoutPanel
+            // 
+            this.tableLayoutPanel.ColumnCount = 1;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Controls.Add(this.txtTexto, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.btnInsertar, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.panelListas, 0, 2);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 3;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1022, 495);
+            this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // txtTexto
+            // 
+            this.txtTexto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTexto.Font = new System.Drawing.Font("Segoe UI", 36F);
+            this.txtTexto.Location = new System.Drawing.Point(10, 10);
+            this.txtTexto.Margin = new System.Windows.Forms.Padding(10);
+            this.txtTexto.MaximumSize = new System.Drawing.Size(0, 300);
+            this.txtTexto.MinimumSize = new System.Drawing.Size(0, 100);
+            this.txtTexto.Name = "txtTexto";
+            this.txtTexto.Size = new System.Drawing.Size(1002, 100);
+            this.txtTexto.TabIndex = 0;
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInsertar.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.btnInsertar.Location = new System.Drawing.Point(3, 201);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(1016, 43);
+            this.btnInsertar.TabIndex = 1;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // panelListas
+            // 
+            this.panelListas.AutoScroll = true;
+            this.panelListas.Controls.Add(this.listBox1);
+            this.panelListas.Controls.Add(this.panelBotones);
+            this.panelListas.Controls.Add(this.listBox2);
+            this.panelListas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelListas.Location = new System.Drawing.Point(3, 250);
+            this.panelListas.Name = "panelListas";
+            this.panelListas.Size = new System.Drawing.Size(1016, 242);
+            this.panelListas.TabIndex = 2;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 24F);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 45;
+            this.listBox1.Location = new System.Drawing.Point(10, 10);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(400, 184);
+            this.listBox1.TabIndex = 0;
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.AutoSize = true;
+            this.panelBotones.Controls.Add(this.btnPasarIzquierda);
+            this.panelBotones.Controls.Add(this.btnPasarDerecha);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBotones.Location = new System.Drawing.Point(423, 3);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(163, 198);
+            this.panelBotones.TabIndex = 1;
+            // 
+            // btnPasarIzquierda
+            // 
+            this.btnPasarIzquierda.Font = new System.Drawing.Font("Segoe UI", 36F);
+            this.btnPasarIzquierda.Location = new System.Drawing.Point(0, 10);
+            this.btnPasarIzquierda.Name = "btnPasarIzquierda";
+            this.btnPasarIzquierda.Size = new System.Drawing.Size(80, 180);
+            this.btnPasarIzquierda.TabIndex = 0;
+            this.btnPasarIzquierda.Text = "<";
+            this.btnPasarIzquierda.UseVisualStyleBackColor = true;
+            this.btnPasarIzquierda.Click += new System.EventHandler(this.btnPasarIzquierda_Click);
+            // 
+            // btnPasarDerecha
+            // 
+            this.btnPasarDerecha.Font = new System.Drawing.Font("Segoe UI", 36F);
+            this.btnPasarDerecha.Location = new System.Drawing.Point(80, 10);
+            this.btnPasarDerecha.Name = "btnPasarDerecha";
+            this.btnPasarDerecha.Size = new System.Drawing.Size(80, 180);
+            this.btnPasarDerecha.TabIndex = 1;
+            this.btnPasarDerecha.Text = ">";
+            this.btnPasarDerecha.UseVisualStyleBackColor = true;
+            this.btnPasarDerecha.Click += new System.EventHandler(this.btnPasarDerecha_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.Font = new System.Drawing.Font("Segoe UI", 24F);
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 45;
+            this.listBox2.Location = new System.Drawing.Point(599, 10);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(10);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(400, 184);
+            this.listBox2.TabIndex = 2;
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(1022, 495);
+            this.Controls.Add(this.tableLayoutPanel);
+            this.Name = "Form1";
+            this.Text = "Formulario de Textos";
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.tableLayoutPanel.PerformLayout();
+            this.panelListas.ResumeLayout(false);
+            this.panelListas.PerformLayout();
+            this.panelBotones.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+    }
+}
