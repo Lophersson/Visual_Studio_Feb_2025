@@ -1,0 +1,41 @@
+using System;
+using System.Windows.Forms;
+
+namespace Textos {
+    public partial class Form1 : Form {
+        public Form1() {
+            InitializeComponent();
+        }
+
+        // Método para insertar texto en listBox1
+        private void btnInsertar_Click(object sender, EventArgs e) {
+            if (!string.IsNullOrEmpty(txtTexto.Text)) {
+                listBox1.Items.Add(txtTexto.Text); // Agrega el texto al listBox1
+                txtTexto.Clear(); // Limpia el TextBox
+                txtTexto.Focus(); // Da el foco de nuevo al TextBox
+            } else {
+                MessageBox.Show("Por favor, ingresa un texto para insertar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // Método para mover un ítem de listBox1 a listBox2
+        private void btnPasarDerecha_Click(object sender, EventArgs e) {
+            if (listBox1.SelectedItem != null) {
+                listBox2.Items.Add(listBox1.SelectedItem); // Mueve el ítem a listBox2
+                listBox1.Items.Remove(listBox1.SelectedItem); // Remueve el ítem de listBox1
+            } else {
+                MessageBox.Show("Selecciona un ítem de la lista para moverlo a la derecha.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // Método para mover un ítem de listBox2 a listBox1
+        private void btnPasarIzquierda_Click(object sender, EventArgs e) {
+            if (listBox2.SelectedItem != null) {
+                listBox1.Items.Add(listBox2.SelectedItem); // Mueve el ítem a listBox1
+                listBox2.Items.Remove(listBox2.SelectedItem); // Remueve el ítem de listBox2
+            } else {
+                MessageBox.Show("Selecciona un ítem de la lista para moverlo a la izquierda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    }
+}
