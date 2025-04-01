@@ -1,0 +1,47 @@
+using System;
+
+public class Program
+{
+    // Definir la función que recibe dos enteros y un texto
+    public static void Funcion1(int x, int y, string texto)
+    {
+        // Comprobar que los índices estén dentro del rango de la cadena
+        if (x >= 0 && x < texto.Length && y >= 0 && y < texto.Length)
+        {
+            // Obtener las letras en las posiciones x y y
+            char letraX = texto[x];  // Letra en la posición x
+            char letraY = texto[y];  // Letra en la posición y
+
+            // Imprimir las letras extraídas
+            Console.WriteLine("La letra en la posición " + x + " es: " + letraX);
+            Console.WriteLine("La letra en la posición " + y + " es: " + letraY);
+        }
+        else
+        {
+            Console.WriteLine("Los índices están fuera de rango.");
+        }
+    }
+
+    // Método principal para probar la función
+    public static void Main()
+    {
+        // Llamar a la función con los parámetros 3, 7 y el texto "chocolate"
+        Funcion1(3, 7, "chocolate");
+    }
+}
+---
+// Función que toma la palabra 'chocolate' y extrae la 3ª y 7ª letra.
+public static void ExtraerLetras()
+{
+// Definir la palabra 'chocolate'
+string palabra = "chocolate";
+
+// Obtener la 3ª letra (índice 2) y la 7ª letra (índice 6)
+char x = palabra[2];  // Tercera letra (índice 2)
+char y = palabra[6];  // Séptima letra (índice 6)
+
+// Imprimir las letras
+Console.WriteLine("La tercera letra es: " + x);
+Console.WriteLine("La séptima letra es: " + y);
+}
+---
